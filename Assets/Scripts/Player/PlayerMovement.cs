@@ -7,14 +7,19 @@ public class PlayerMovement : MonoBehaviour
     private float _inputValueX;
     private float _posX;
     private float _posY;
-    private float _speed;
+    
+    
+    [SerializeField] private float speed;
+    [SerializeField] private float BORDMINX;
+    [SerializeField] private float BORDMINY;
+    [SerializeField] private float BORDMAXX;
+    [SerializeField] private float BORDMAXY;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-        _speed = 20f;
+        
     }
 
     // Update is called once per frame
@@ -28,8 +33,10 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         var position = transform.position;
-        _posX = (position.x + (_inputValueX * Time.deltaTime * _speed));
-        _posY = (position.y + (_inputValueY * Time.deltaTime) * _speed);
+        _posX = (position.x + (_inputValueX * Time.deltaTime * speed));
+        _posY = (position.y + (_inputValueY * Time.deltaTime) * speed);
+        _posX = Mathf.Clamp(_posX, BORDMINX, BORDMAXX);
+        _posY = Mathf.Clamp(_posY, BORDMINY, BORDMAXY);
         transform.position = new Vector2(_posX, _posY);
     }
 }
