@@ -12,17 +12,33 @@ public abstract class BaseWeapon : MonoBehaviour
     protected float Duration;
     protected float ExplosionRadius;
     protected int NumberOfSpawn;
-    
-    public GameObject Player;
-    public GameObject WeaponInstanciate;
+    private float _currentSpawnRate;
 
 
-    public abstract void WeaponSpawn();
+    protected virtual void Start()
+    {
+        SpawnRate = 2f;
+        _currentSpawnRate = 2f;
+        Speed = 3f;
+    }
 
-    public abstract void Movement();
+    protected virtual void WeaponSpawn()
+    {
+        _currentSpawnRate = SpawnRate;
+    }
 
-    private void Start()
+    protected virtual void Movement()
     {
         
+    }
+
+    protected virtual void Update()
+    {
+        _currentSpawnRate -= Time.deltaTime;
+        if (_currentSpawnRate <= 0f)
+        {
+            Debug.Log("here");
+            WeaponSpawn();
+        }
     }
 }

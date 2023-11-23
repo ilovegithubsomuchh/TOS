@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("PlayerMoves")] private float _inputValueY;
-    private float _inputValueX;
+    [Header("PlayerMoves")] public float _inputValueY;
+    public float _inputValueX;
     private float _posX;
     private float _posY;
     
