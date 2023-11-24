@@ -3,23 +3,30 @@ using System.Collections.Generic;
 using Cinemachine.Utility;
 using UnityEngine;
 
-public class WeaponBehaviour : BaseWeapon
+public class KnifeBehaviour : Dart
 {
     public PlayerMovement PlayerMovement;
     private float WeaponDirectionX;
     public float WeaponDirectionY;
+   
 
-    void Start()
+    protected override void Start()
     {
         base.Start();
+       
         PlayerMovement = FindObjectOfType<PlayerMovement>();
         WeaponDirectionX = PlayerMovement._inputValueX;
         WeaponDirectionY = PlayerMovement._inputValueY;
+        if ((WeaponDirectionX == 0) && (WeaponDirectionY == 0))
+        {
+            WeaponDirectionX = 1;
+        }
     }
 
-    void Update()
+    protected override void Update()
     {
         Movement();
+       
     }
 
     protected override void Movement()
