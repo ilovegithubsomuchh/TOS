@@ -6,6 +6,7 @@ using UnityEngine;
 
 public abstract class BaseWeapon : MonoBehaviour
 {
+    public GameObject prefab;
     protected float SpawnRate;
     protected float Speed;
     protected float Damage;
@@ -19,7 +20,7 @@ public abstract class BaseWeapon : MonoBehaviour
     {
         SpawnRate = 2f;
         _currentSpawnRate = 2f;
-        Speed = 3f;
+        Speed = 25f;
     }
 
     protected virtual void WeaponSpawn()

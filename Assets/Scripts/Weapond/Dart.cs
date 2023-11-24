@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class WeaponController : BaseWeapon
 {
-    public GameObject prefab;
+  
 
 
     protected override void WeaponSpawn()
     {
         base.WeaponSpawn();
-        Instantiate(prefab);
-        prefab.transform.position = transform.position;
+       GameObject Knife =  Instantiate(base.prefab);
+        Knife.transform.position = transform.position;
     }
 
 

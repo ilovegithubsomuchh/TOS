@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float _inputValueX;
     private float _posX;
     private float _posY;
+    public Vector3 direction;
     
     
     [SerializeField] private float speed;
@@ -28,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
         _inputValueX = Input.GetAxis("Horizontal");
         _inputValueY = Input.GetAxis("Vertical");
         if (_inputValueY != 0 || _inputValueX != 0) Move();
+        else direction = Vector3.zero;
+
+
     }
 
     void Move()
@@ -37,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         _posY = (position.y + (_inputValueY * Time.deltaTime) * speed);
         _posX = Mathf.Clamp(_posX, BORDMINX, BORDMAXX);
         _posY = Mathf.Clamp(_posY, BORDMINY, BORDMAXY);
-        transform.position = new Vector2(_posX, _posY);
+        direction = new Vector3(_posX, _posY,0);
+        transform.position = direction;
     }
 }
