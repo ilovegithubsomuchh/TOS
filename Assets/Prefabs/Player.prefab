@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3719576765431962734
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4216684355933183745}
-  - component: {fileID: 7690839203321398676}
-  m_Layer: 0
-  m_Name: WeaponController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4216684355933183745
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3719576765431962734}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5267132118865280774}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7690839203321398676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3719576765431962734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9b497329e41d14ba59f76c2195d99e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab:
-  - {fileID: 3576868344226724276, guid: 63dc71c7b696d4d4792868bdababc003, type: 3}
-  - {fileID: 1800318107515779695, guid: f2588a7a053918b4e87f7e03b86ad663, type: 3}
 --- !u!1 &6211500803119364606
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +14,7 @@ GameObject:
   - component: {fileID: 3065056442277384234}
   - component: {fileID: 4346300270904998933}
   - component: {fileID: 8517652450733342506}
+  - component: {fileID: 2091920645377773876}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -80,8 +34,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4216684355933183745}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4108273983724584956
@@ -187,3 +140,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c8b10bf14af854aa53352a9900f8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnedWeapons: []
+  PlayerData: {fileID: 0}
+--- !u!114 &2091920645377773876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211500803119364606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431dbb9f94859e146b0aa8e0749c6fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSlots: []

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cinemachine.Utility;
 using UnityEngine;
 
-public class KnifeBehaviour : Dart
+public class KnifeBehaviour : WeaponManager
 {
     public PlayerMovement PlayerMovement;
     private float WeaponDirectionX;
@@ -25,13 +25,14 @@ public class KnifeBehaviour : Dart
 
     protected override void Update()
     {
-        Movement();
+        Attack();
        
     }
 
-    protected override void Movement()
+    protected override void Attack()
     {
-        transform.position += new Vector3((WeaponDirectionX * (Speed * Time.deltaTime)),
-            (WeaponDirectionY * (Speed * Time.deltaTime)), 0);
+        base.Attack();
+        transform.position += new Vector3((WeaponDirectionX * (WeaponData.speed * Time.deltaTime)),
+            (WeaponDirectionY * (WeaponData.speed * Time.deltaTime)), 0);
     }
 }

@@ -1,19 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerMovement), typeof(PlayerInventory))]
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+
+    public List<GameObject> SpawnedWeapons;
+    public PlayerSO PlayerData;
+    public int weaponIndex;
+    public PlayerInventory _playerInventory;
+
+
+ 
+
+    private void Awake()
     {
         GetComponent<PlayerMovement>();
+        _playerInventory =  GetComponent<PlayerInventory>();
+        SpawnWeapon(PlayerData.baseWeapon);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnWeapon(GameObject weapon)
     {
-        
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(transform);
+        _playerInventory.AddWeapon(weaponIndex, weapon.GetComponent<WeaponManager>());
+        weaponIndex++;
+
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4596831327230067560}
   - component: {fileID: 1834387498924258138}
   - component: {fileID: 8299270473167652680}
-  - component: {fileID: 3263316528347738835}
+  - component: {fileID: -7424729444332375964}
   m_Layer: 0
   m_Name: DART
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3263316528347738835
+--- !u!114 &-7424729444332375964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdd3fc71bd71fc4fa5ff5417e443e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
+  WeaponData: {fileID: 11400000, guid: 4aacb7cf945d22c48a5c664d7157178d, type: 2}
   PlayerMovement: {fileID: 0}
   WeaponDirectionY: 0
-  WeaponController: {fileID: 0}

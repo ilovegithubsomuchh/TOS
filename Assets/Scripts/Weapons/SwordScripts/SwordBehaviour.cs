@@ -3,23 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordBehaviour : Sword
+public class SwordBehaviour : WeaponManager
 {
     protected override void Start()
     {
         base.Start();
+        
 
         transform.position = new Vector3(transform.position.x + 2, transform.position.y, 0);
+        
     }
 
 
     private void LateUpdate()
     {
-        Movement();
+        Attack();
     }
 
-    protected override void Movement()
+    protected override void Attack()
     {
-        transform.RotateAround(transform.parent.position, transform.parent.forward, 70f * Time.deltaTime);
+        
+        
+        transform.RotateAround(transform.parent.position, transform.parent.forward, WeaponData.speed * Time.deltaTime);
     }
 }
