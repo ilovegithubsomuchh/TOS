@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 [RequireComponent(typeof(PlayerMovement), typeof(PlayerInventory))]
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public List<GameObject> SpawnedWeapons;
+  //  public List<GameObject> SpawnedWeapons;
     public PlayerSO PlayerData;
     public int weaponIndex;
     public PlayerInventory _playerInventory;
@@ -29,6 +32,23 @@ public class Player : MonoBehaviour
         spawnedWeapon.transform.SetParent(transform);
         _playerInventory.AddWeapon(weaponIndex, weapon.GetComponent<WeaponManager>());
         weaponIndex++;
+        
 
+    }
+
+
+    private void Update()
+    {
+        
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+         
+           var index = Random.Range(0, weaponIndex);
+           _playerInventory.LevelUpWeapon(index);
+            Debug.Log(_playerInventory.WeaponSlots.Count);
+
+        }
     }
 }
