@@ -21,9 +21,10 @@ public class PlayerInventory : MonoBehaviour
 
             GameObject newWeapon = Instantiate(weaponManager.WeaponData.NextUpgrade, transform.position,
                 Quaternion.identity);
+
             newWeapon.transform.SetParent(transform);
             AddWeapon(slotIndex, newWeapon.GetComponent<WeaponManager>());
-            
+            Destroy(transform.GetChild(slotIndex).gameObject);
         }
     }
 }
