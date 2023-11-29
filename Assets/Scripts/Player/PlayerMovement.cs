@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -44,4 +45,5 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector3(_posX, _posY,0);
         transform.position = direction;
     }
+    
 }
