@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -39,4 +40,5 @@ public class PlayerMovement : MonoBehaviour
         _posY = Mathf.Clamp(_posY, BORDMINY, BORDMAXY);
         transform.position = new Vector2(_posX, _posY);
     }
+    
 }

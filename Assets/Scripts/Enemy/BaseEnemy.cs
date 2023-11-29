@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,8 @@ public abstract class BaseEnemy : MonoBehaviour
 {
     public EnemyScriptableObjects enemyData;
 
-    protected Transform player;
+    protected Transform playerTransform;
+    protected GameObject player;
 
     protected float currentMoveSpeed;
     protected float currentHealth;
@@ -22,7 +24,7 @@ public abstract class BaseEnemy : MonoBehaviour
     
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().transform;
+        playerTransform = FindObjectOfType<PlayerMovement>().transform;
     }
     
     void Update()
