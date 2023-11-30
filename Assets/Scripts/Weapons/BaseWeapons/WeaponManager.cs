@@ -7,10 +7,12 @@ public class WeaponManager : MonoBehaviour
 {
     public WeaponSO WeaponData;
     private float CurrentCoolDown;
+    protected float offsetX;
+    protected float offsetY;
 
     protected virtual void Start()
     {
-        
+       
     }
 
 
@@ -20,11 +22,13 @@ public class WeaponManager : MonoBehaviour
         if (CurrentCoolDown <= 0f)
         {
             Attack();
+            
         }
     }
 
     protected virtual void Attack()
     {
         CurrentCoolDown = WeaponData.cooldownDuration;
+        
     }
 }

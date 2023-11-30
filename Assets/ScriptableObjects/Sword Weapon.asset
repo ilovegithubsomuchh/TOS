@@ -16,4 +16,5 @@ MonoBehaviour:
   damage: 0
   speed: 20
   cooldownDuration: 1
-  NextUpgrade: {fileID: 9077834236589274566, guid: 9fbe5faf920f3b74ab90680b42eff595, type: 3}
+  NextUpgrade: {fileID: 3831143133357916062, guid: 500bb8fdc42b95d498cbd6ffe3c7eaa9, type: 3}
+  NumberToSpawn: 10

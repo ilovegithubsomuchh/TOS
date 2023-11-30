@@ -11,4 +11,5 @@ public class WeaponSO : ScriptableObject
     public float speed;
     public float cooldownDuration;
     public GameObject NextUpgrade;
+    public int NumberToSpawn;
 }

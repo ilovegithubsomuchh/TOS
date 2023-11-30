@@ -17,3 +17,4 @@ MonoBehaviour:
   speed: 20
   cooldownDuration: 2
   NextUpgrade: {fileID: 9077834236589274566, guid: 9fbe5faf920f3b74ab90680b42eff595, type: 3}
+  NumberToSpawn: 3
