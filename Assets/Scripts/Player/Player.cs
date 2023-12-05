@@ -11,18 +11,16 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
 
-  //  public List<GameObject> SpawnedWeapons;
+    //  public List<GameObject> SpawnedWeapons;
     public PlayerSO PlayerData;
     public int weaponIndex;
     public PlayerInventory _playerInventory;
 
 
- 
-
     private void Awake()
     {
         GetComponent<PlayerMovement>();
-        _playerInventory =  GetComponent<PlayerInventory>();
+        _playerInventory = GetComponent<PlayerInventory>();
         SpawnWeapon(PlayerData.baseWeapon);
     }
 
@@ -32,23 +30,12 @@ public class Player : MonoBehaviour
         spawnedWeapon.transform.SetParent(transform);
         _playerInventory.AddWeapon(weaponIndex, weapon.GetComponent<WeaponManager>());
         weaponIndex++;
-        
-
     }
 
 
     private void Update()
     {
-        
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-         
-           var index = Random.Range(0, weaponIndex);
-           _playerInventory.LevelUpWeapon(index);
-            Debug.Log(_playerInventory.WeaponSlots.Count);
-
-        }
+        // var index = Random.Range(0, weaponIndex);
+        // _playerInventory.LevelUpWeapon(index);
     }
 }
